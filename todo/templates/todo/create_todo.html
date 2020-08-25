@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'todo/header.html' %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create To Do</title>
+</head>
+<body>
+    <div class="form_create">
+        <h2>Create Todo</h2>
+        <img src="test5.svg" alt="" class="ilust">
+        <div class="input">
+            <form method="POST">
+                {% csrf_token %}
+            <div class="inputBox">
+                <label>Title</label>
+                <input type="text" maxlength="110" required id="id_title" name="title" placeholder="">
+            </div>
+            <div class="inputBox">
+                <label>Description</label>
+                <textarea name="description" cols="55" rows="6" placeholder="" maxlength="210"></textarea>
+            </div>
+            <div class="inputBox">
+                <label for="id_important">Important</label>
+                <input type="checkbox" name="important" id="id_important" name="important">
+            </div>
+            <div class="inputBox">
+                <h4>{{ error }} </h4>
+                <button type="submit">Create</button>
+            </div>
+                </form>
+        </div>
+           </div>
+</body>
+{% endblock %}
+</html>
