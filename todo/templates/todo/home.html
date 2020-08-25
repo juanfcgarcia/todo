@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
+{% extends 'todo/header.html' %}
+{% block content %}
+{% load static %}
 
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <title>TO DO LIST</title>
+    </head>
+    <body>
+        <section>
+            <div class="container">
+                <div class="user singinBx">
+                    <div class="imgBx"><img src="{% static 'images/1.jpg' %}" alt=""></div>
+                    <div class="formBx">
+                        <form autocomplete="off" method="POST">
+                            {% csrf_token %}
+                            <img src="{% static 'images/test5.svg' %}" alt="" class="ilust">
+                            <h2>Sign In</h2>
+                            <h3>Sign in to your account to continue</h3>
+                            <input type="text" name="username" placeholder="Username" autocomplete="off">
+                            <input type="password" name="password" placeholder="Password" autocomplete="off">
+                              <h4>{{ error }} </h4>
+                            <button type="submit">Sign In</button>
+                            <p class="singUp">Not a member ? <a href="{% url 'signup_user' %}">Create account</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+{% endblock %}
 </html>
