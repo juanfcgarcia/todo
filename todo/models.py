@@ -13,5 +13,6 @@ class Todo(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     completed_date = models.DateTimeField(blank=True, null=True)
 
+
 def __str__(self):
     return self.title
