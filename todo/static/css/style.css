@@ -235,6 +235,7 @@ section .container .user .formBx form a{
   background-color: black;
   color: white;
   width: 100%;
+  top: 0;
 }
 
 .header-todo button{

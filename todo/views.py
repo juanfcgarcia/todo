@@ -80,7 +80,7 @@ def edit_todo(request, todo_pk):
             return render(request, 'todo/edit_todo.html', {'todo': todo, 'form': form, 'error':'verify info'})
 
 
-def completed_todo(request, todo_pk):
+def complete_todo(request, todo_pk):
     todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
     if request.method == 'POST':
         todo.completed_date = timezone.now()
@@ -92,3 +92,11 @@ def delete_todo(request, todo_pk):
     if request.method == 'POST':
         todo.delete()
         return redirect('your_todos')
+
+def completed(request):
+    todos = Todo.objects.filter(user=request.user, completed_date__isnull=False)
+    return render(request, 'todo/completed_todos.html', {'todos':todos})
+
+def all_todos(request):
+    todos = Todo.objects.filter(user=request.user)
+    return render(request, 'todo/all_todos.html', {'todos': todos})

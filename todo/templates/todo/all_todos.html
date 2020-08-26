@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>your todos</title>
+    <title>All</title>
 </head>
 <body>
         <h2>Monday, 11:12am, Juan Felipe</h2>
@@ -16,7 +16,7 @@
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
         <button onclick="location.href='{% url 'completed' %}'">Completed</button>
-        <button onclick="location.href='{% url 'all_todos' %}'">All</button>
+        <button>All</button>
     </div>
             <ul>
                 {% for todo in todos %}
@@ -25,7 +25,6 @@
                     {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
                     {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %}
                     <button class="btn_edit" onclick="location.href='{% url 'edit_todo' todo.id %}'" ></button>
-
                 </li>
                 {% endfor %}
             </ul>
