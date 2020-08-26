@@ -1,0 +1,213 @@
+ *
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    min-height: 100vh;
+    background: #2573D5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .container{
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background-color: #232323;
+    box-shadow: 0 25px 50px rgba(27, 41, 163, 0.74);
+    overflow: hidden;
+    border-radius: 34px;
+    border-width: 12px;
+    border-style: solid;
+}
+
+section .container .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+section .container .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color:  #ff7a4c;
+    transition: 0.5s;
+
+}
+
+section .container .user .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+section .container .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+
+
+}
+
+section .container .user .formBx h2{
+    color: white;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+section .container .user .formBx h3{
+    font-weight: 400;
+    font-size: 82%;
+    color: rgb(160, 159, 159);
+    margin-bottom: 5%;
+}
+
+section .container .user .formBx h4{
+    font-weight: 400;
+    font-size: 82%;
+    color: #e74c3c;
+    margin-bottom: 5%;
+}
+
+section .container .user .formBx .ilust{
+    width: 50%;
+    height: 50%;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display:block;
+    margin:auto;
+}
+
+section .container .user .formBx form input{
+
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px;
+    border-radius: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ff7a4c;
+    margin-bottom: 2.5%;
+    color: white;
+    height: 42px;
+    font-size: 14px;
+}
+
+section .container .user .formBx form button{
+    color: white;
+    background-color: #2573D5;
+    margin-top: 10%;
+    margin-bottom: 6%;
+    font-size: 15px;
+    width: 30%;
+    padding: 8px;
+    border: none;
+    border: 2px;
+    border-radius: 6px;
+    border-width: 1px;
+
+}
+
+section .container .user .formBx form p{
+    color: rgb(160, 159, 159);
+    text-align: center;
+
+}
+
+section .container .user .formBx form a{
+    color: #ff7a4c;
+    text-decoration: none;
+}
+
+
+.todo_container{
+    margin-top: 3%;
+    width: 60%;
+    height: 60vh;
+    background-color:  rgba(0, 0, 0, 0);
+    overflow: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    display:block;
+    margin:auto;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.todo_container ul{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    display:block;
+    margin:auto;
+    background-color:  rgba(0, 0, 0, 0);
+
+}
+
+.todo_container ul li{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    display:block;
+    margin:auto;
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+    border-radius: 12px;
+    background: rgba(41, 48, 77, 1);
+    box-shadow: 0 8px 25px rgba(0, 51, 92, 0.844);
+    color: white;
+    border: 3px;
+    border-radius: 14px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #2573D5;
+
+}
+
+ .btn_new_todo{
+    height: 55px;
+    width: 55px;
+    border: none;
+    margin-top: 10%;
+    background-color: rgba(0, 0, 0, 0.233);
+    background-size: cover;
+    background-image: url('../images/plus2.svg');
+    border-radius: 70px;
+    display:block;
+    margin:auto;
+
+  }
