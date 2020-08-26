@@ -66,7 +66,7 @@ def create_todo(request):
                           {'form': Todo_form(), 'error': 'The data is wrong, Try again'})
 
 def edit_todo(request, todo_pk):
-    todo = get_object_or_404(Todo, pk=todo_pk)
+    todo = get_object_or_404(Todo, pk=todo_pk, user=request.user)
     if request.method == 'GET':
         form = Todo_form(instance=todo)
         return render(request, 'todo/edit_todo.html', {'todo': todo, 'form': form})
