@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -64,3 +64,17 @@ def create_todo(request):
         except ValueError:
             return render(request, 'todo/create_todo.html',
                           {'form': Todo_form(), 'error': 'The data is wrong, Try again'})
+
+def edit_todo(request, todo_pk):
+    todo = get_object_or_404(Todo, pk=todo_pk)
+    if request.method == 'GET':
+        form = Todo_form(instance=todo)
+        return render(request, 'todo/edit_todo.html', {'todo': todo, 'form': form})
+    else:
+        try:
+            form = Todo_form(request.POST, instance=todo)
+            form.save()
+            return redirect('your_todos')
+        except ValueError:
+            return render(request, 'todo/edit_todo.html', {'todo': todo, 'form': form, 'error':'verify info'})
+

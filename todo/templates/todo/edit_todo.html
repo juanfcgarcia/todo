@@ -3,36 +3,34 @@
 {% extends 'todo/header.html' %}
 {% block content %}
 {% load static %}
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>Create To Do</title>
+    <title>Edit</title>
 </head>
 <body>
     <div class="form_create">
-        <h2>Create Todo</h2>
+        <h2>Edit Todo</h2>
         <img src="test5.svg" alt="" class="ilust">
         <div class="input">
             <form method="POST">
                 {% csrf_token %}
             <div class="inputBox">
                 <label>Title</label>
-                <input type="text" maxlength="110" required id="id_title" name="title" placeholder="">
+                <input type="text" maxlength="110" required id="id_title" name="title" placeholder="" value=" {{ todo.title }}">
             </div>
             <div class="inputBox">
                 <label>Description</label>
-                <textarea name="description" cols="55" rows="6" placeholder="" maxlength="210"></textarea>
+                <textarea name="description" required id="id_description" cols="55" rows="6" placeholder="" maxlength="210">{{ todo.description }}</textarea>
             </div>
             <div class="inputBox">
+                {{ todo.important }}
                 <label for="id_important">Important</label>
-                <input type="checkbox" name="important" id="id_important" name="important">
+
+                <input type="checkbox" name="important" id="id_important" name="important" {% if todo.important %} checked {% endif %}>
             </div>
             <div class="inputBox">
                 <h4>{{ error }} </h4>
-                <button type="submit">Create</button>
+                <button type="submit">Save</button>
             </div>
                 </form>
         </div>
