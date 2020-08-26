@@ -47,7 +47,8 @@ def logout_user(request):
 
 
 def your_todos(request):
-    return render(request, 'todo/your_todos.html')
+    todos = Todo.objects.filter(user=request.user, completed_date__isnull=True)
+    return render(request, 'todo/your_todos.html', {'todos':todos})
 
 
 def create_todo(request):
@@ -59,7 +60,7 @@ def create_todo(request):
             newtodo = form.save(commit=False)
             newtodo.user = request.user
             newtodo.save()
-            return redirect('all_todos')
+            return redirect('your_todos')
         except ValueError:
             return render(request, 'todo/create_todo.html',
                           {'form': Todo_form(), 'error': 'The data is wrong, Try again'})

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-
+{% extends 'todo/header.html' %}
+{% block content %}
 <html lang="en">
-
+{% load static %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SING UP</title>
+        <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <title>TO DO LIST</title>
     </head>
     <body>
         <section>
@@ -23,7 +26,7 @@
                             <input type="password" name="password2" placeholder="Confirm password">
                             <h4>{{ error }} </h4>
                             <button type="submit">Sign Up</button>
-                            <p class="singUp"> Do you already have an account? <a>Sign In</a></p>
+                            <p class="singUp"> Do you already have an account? <a href="{% url 'home' %}">Sign In</a></p>
 
                         </form>
                     </div>
@@ -32,5 +35,5 @@
             </div>
         </section>
     </body>
-
+{% endblock %}
 </html>

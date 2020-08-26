@@ -2,12 +2,28 @@
 <html lang="en">
 {% extends 'todo/header.html' %}
 {% block content %}
+{% load static %}
 <head>
     <meta charset="UTF-8">
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>all</title>
 </head>
 <body>
-       <h1>List</h1>
+        <h2>Monday, 11:12am, Juan Felipe</h2>
+        <h3>All your tasks</h3>
+<div class="todo_container">
+            <ul>
+                <li>hahahah</li>
+                {% for todo in todos %}
+                <li>{% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}{% if todo.description %} -{{todo.description}} {% endif %}</li>
+                {% endfor %}
+            </ul>
+</div>
+        <form method="GET">
+             {% csrf_token %}
+            <button onclick="location.href='{% url 'create_todo' %}'" type="button" class="btn_new_todo"></button>
+        </form>
 
 </body>
      {% endblock %}
