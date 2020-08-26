@@ -152,7 +152,7 @@ section .container .user .formBx form a{
     border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
-    -ms-overflow-style: none;  
+    -ms-overflow-style: none;
     scrollbar-width: none;
     display:block;
     margin:auto;
@@ -229,5 +229,78 @@ section .container .user .formBx form a{
   background-image: url("../images/pencil.svg");
   margin: 0;
   margin-left:100%;
+}
 
+.form_create{
+    position: relative;
+    width: 450px;
+    padding: 40px 40px 60px;
+    background-color: rgba(23, 23, 23, 0.926);
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.form_create h2{
+
+    color: white;
+
+}
+
+.form_create .input{
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form_create .input .inputBox{
+     margin-top: 20px;
+}
+
+.form_create .input label{
+
+    display: block;
+    color:  rgb(160, 159, 159);
+    margin-bottom: 5px;
+
+}
+
+.form_create .input .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background-color:  rgba(0, 0, 0, 0);
+    border: 3px;
+    border-radius: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ff7a4c;
+    margin-bottom: 2.5%;
+    color: white;
+    height: 42px;
+    font-size: 14px;
+
+}
+
+.form_create .ilust{
+    width: 50%;
+    height: 50%;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display:block;
+    margin:auto;
+}
+
+.form_create textarea{
+    position: relative;
+    padding: 8px;
+    background-color:  rgba(0, 0, 0, 0);
+    border: 3px;
+    border-radius: 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ff7a4c;
+    margin-bottom: 2.5%;
+    color: white;
+    font-size: 14px;
 }
