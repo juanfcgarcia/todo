@@ -7,16 +7,17 @@
     <meta charset="UTF-8">
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>all</title>
+    <title>your todos</title>
 </head>
 <body>
         <h2>Monday, 11:12am, Juan Felipe</h2>
         <h3>All your tasks</h3>
 <div class="todo_container">
             <ul>
-                <li>hahahah</li>
                 {% for todo in todos %}
-                <li>{% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>{% endif %}{% if todo.description %} -{{todo.description}} {% endif %}</li>
+                <li>
+                    {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
+                    {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %} <button class="btn_edit"></button></li>
                 {% endfor %}
             </ul>
 </div>

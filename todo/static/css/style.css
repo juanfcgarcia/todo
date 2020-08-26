@@ -144,16 +144,16 @@ section .container .user .formBx form a{
     text-decoration: none;
 }
 
-
 .todo_container{
     margin-top: 3%;
-    width: 60%;
+    width: 32%;
     height: 60vh;
-    background-color:  rgba(0, 0, 0, 0);
+    background-color: rgba(23, 23, 23, 0.926);
+    border-radius: 10px;
     overflow: hidden;
     overflow-y: scroll;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
     display:block;
     margin:auto;
     justify-content: center;
@@ -162,6 +162,10 @@ section .container .user .formBx form a{
     text-align: center;
     margin-bottom: 10px;
 }
+
+.todo_container::-webkit-scrollbar {
+    display: none;
+ }
 
 
 .todo_container ul{
@@ -171,32 +175,35 @@ section .container .user .formBx form a{
     text-align: center;
     display:block;
     margin:auto;
+    padding-left: 0px;
     background-color:  rgba(0, 0, 0, 0);
-
 }
 
+
 .todo_container ul li{
+    color: aliceblue;
     justify-content: center;
     align-content: center;
     align-items: center;
     text-align: center;
     display:block;
     margin:auto;
+    width: 90%;
     list-style: none;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 40%;
-    border-radius: 12px;
-    background: rgba(41, 48, 77, 1);
-    box-shadow: 0 8px 25px rgba(0, 51, 92, 0.844);
-    color: white;
-    border: 3px;
-    border-radius: 14px;
-    border-width: 1.5px;
-    border-style: solid;
-    border-color: #2573D5;
-
+    list-style-type: none;
+    background: rgba(255, 255, 255, 0.0);
+    border-radius: 3px;
+    margin-top: 10px;
+    padding-left: 38px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 49px;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 0px rgba(66, 63, 61, 0.7);
+    z-index: 2;
+    border-bottom: 3px solid #2573D5;
 }
+
 
  .btn_new_todo{
     height: 55px;
@@ -211,3 +218,16 @@ section .container .user .formBx form a{
     margin:auto;
 
   }
+
+.btn_edit{
+  height: 22px;
+  width: 22px;
+  border: none;
+  display:block;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+  background-image: url("../images/pencil.svg");
+  margin: 0;
+  margin-left:100%;
+
+}
