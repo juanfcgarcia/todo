@@ -5,6 +5,8 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Edit</title>
 </head>
 <body>
@@ -20,7 +22,7 @@
             </div>
             <div class="inputBox">
                 <label>Description</label>
-                <textarea name="description" required id="id_description" cols="55" rows="6" placeholder="" maxlength="210">{{ todo.description }}</textarea>
+                <textarea name="description" required id="id_description" cols="52" rows="6" placeholder="" maxlength="210">{{ todo.description }}</textarea>
             </div>
             <div class="inputBox">
                 {{ todo.important }}
