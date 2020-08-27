@@ -13,7 +13,7 @@
 <div class="body-content">
     <div class="form_create">
         <h2>Edit Todo</h2>
-        <img src="test5.svg" alt="" class="ilust">
+        <img src="{% static 'images/test5.svg' %}" alt="" class="ilust">
         <div class="input">
             <form method="POST">
                 {% csrf_token %}
@@ -28,14 +28,14 @@
                 <label for="id_important">Important</label>
 
                 <input type="checkbox" class="checkmark" name="important" id="id_important" name="important" {% if todo.important %} checked {% endif %}>
+ <div class="actions-todo">
 
 
-            <div class="inputBox">
                 <h4>{{ error }} </h4>
                 <button type="submit" class="btn-save"></button>
-            </div>
+          </div>
                 </form>
-            <div class="actions-todo">
+ <div class="actions-todo">
                 <form method="POST" action="{% url 'complete_todo' todo.id %}">
                       {% csrf_token %}
                           <button type="submit" class="btn-complete"></button>
@@ -47,6 +47,7 @@
                   </div>
         </div>
            </div>
+    </div>
     </div>
 </body>
 {% endblock %}

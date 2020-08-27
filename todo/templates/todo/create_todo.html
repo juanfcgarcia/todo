@@ -15,7 +15,7 @@
 <div class="body-content">
     <div class="form_create">
         <h2>Create Todo</h2>
-        <img src="test5.svg" alt="" class="ilust">
+        <img src="{% static 'images/test5.svg' %}" alt="" class="ilust">
         <div class="input">
             <form method="POST">
                 {% csrf_token %}
@@ -27,13 +27,13 @@
                 <label>Description</label>
                 <textarea name="description" cols="55" rows="6" placeholder="" maxlength="210"></textarea>
             </div>
-            <div class="inputBox">
+
                 <label for="id_important">Important</label>
-                <input type="checkbox" name="important" id="id_important" name="important">
-            </div>
+                <input type="checkbox" class="checkmark" name="important" id="id_important" name="important">
+
             <div class="inputBox">
                 <h4>{{ error }} </h4>
-                <button type="submit">Create</button>
+                <button type="submit" class="btn-cre">Create</button>
             </div>
                 </form>
         </div>

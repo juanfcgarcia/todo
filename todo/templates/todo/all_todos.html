@@ -13,8 +13,8 @@
 </head>
 <body>
 <div class="body-content">
-        <h2>{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
-        <h3>Your tasks</h3>
+        <h2 class="time-info">{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
+        <h3 class="title">Your tasks</h3>
 <div class="todo_container">
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
