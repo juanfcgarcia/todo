@@ -6,6 +6,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+overflow-y: hidden;
+}
+
+
 section{
     position: relative;
     min-height: 100vh;
@@ -425,7 +430,7 @@ section .container .user .formBx form a{
     text-align: right;
 }
 
-.btn-cre{
+.btn-confirm{
 
     color: white;
     background-color: #2573D5;
@@ -438,5 +443,22 @@ section .container .user .formBx form a{
     border: 2px;
     border-radius: 6px;
     border-width: 1px;
+}
 
+.btn-out{
+  height: 26px;
+  width: 26px;
+  border: none;
+  display:block;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+  background-image: url("../images/log-out.svg");
+  margin-left: 98%;
+  margin-right: 30px;
+  margin-top: 10px;
+
+}
+
+h2{
+padding-right:10px;
 }

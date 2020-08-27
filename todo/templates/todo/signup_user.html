@@ -17,7 +17,7 @@
 
                         <form method="POST">
                             {% csrf_token %}
-                            <img src="test3.svg" alt="" class="ilust">
+                            <img src="{% static 'images/test3.svg' %}" alt="" class="ilust">
                             <h2>Create Account</h2>
 
                             <input type="text" name="username" placeholder="Username">
