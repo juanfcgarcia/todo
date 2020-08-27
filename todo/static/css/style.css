@@ -258,7 +258,8 @@ section .container .user .formBx form a{
     background-color: rgba(23, 23, 23, 0.926);
     border-radius: 10px;
     text-align: center;
-
+    display:block;
+    margin:auto;
 }
 
 .form_create h2{
@@ -323,5 +324,93 @@ section .container .user .formBx form a{
     margin-bottom: 2.5%;
     color: white;
     font-size: 14px;
+}
+
+.time-info{
+    margin-top: 22px;
+    padding-top: 24px;
+    margin-bottom: 0px;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+}
+
+.title{
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+.body-content{
+  background-color: #2573D5;
+  background-image: url("../images/7.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  min-height: 100%;
+}
+
+.actions-todo{
+  justify-content: center;
+   text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-delete{
+  height: 28px;
+  width: 28px;
+  border: none;
+  display:block;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+  background-image: url("../images/trash.svg");
+  margin-left: 16px;
+  margin-right: 16px;
+
+}
+
+.btn-save{
+    height: 28px;
+  width: 28px;
+  border: none;
+  display:block;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+  background-image: url("../images/save.svg");
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.btn-complete{
+  height: 28px;
+  width: 28px;
+  border: none;
+  display:block;
+  background-color: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+  background-image: url("../images/check-circle.svg");
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.checkmark{
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: 1px;
+  border-radius: 9px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff7a4c;
+
 }
 

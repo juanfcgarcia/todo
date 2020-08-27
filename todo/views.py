@@ -7,6 +7,9 @@ from .forms import Todo_form
 from .models import Todo
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+import datetime
+from django.utils import timezone
+from datetime import timedelta
 
 
 # Create your views here.

@@ -10,6 +10,7 @@
     <title>Edit</title>
 </head>
 <body>
+<div class="body-content">
     <div class="form_create">
         <h2>Edit Todo</h2>
         <img src="test5.svg" alt="" class="ilust">
@@ -24,27 +25,29 @@
                 <label>Description</label>
                 <textarea name="description" required id="id_description" cols="52" rows="6" placeholder="" maxlength="210">{{ todo.description }}</textarea>
             </div>
-            <div class="inputBox">
-                {{ todo.important }}
                 <label for="id_important">Important</label>
 
-                <input type="checkbox" name="important" id="id_important" name="important" {% if todo.important %} checked {% endif %}>
-            </div>
+                <input type="checkbox" class="checkmark" name="important" id="id_important" name="important" {% if todo.important %} checked {% endif %}>
+
+
             <div class="inputBox">
                 <h4>{{ error }} </h4>
-                <button type="submit">Save</button>
+                <button type="submit" class="btn-save"></button>
             </div>
                 </form>
+            <div class="actions-todo">
                 <form method="POST" action="{% url 'complete_todo' todo.id %}">
                       {% csrf_token %}
-                          <button type="submit">Complete</button>
+                          <button type="submit" class="btn-complete"></button>
                 </form>
             <form method="POST" action="{% url 'delete_todo' todo.id %}">
                       {% csrf_token %}
-                          <button type="submit">Delete</button>
+                          <button type="submit" class="btn-delete"></button>
                 </form>
+                  </div>
         </div>
            </div>
+    </div>
 </body>
 {% endblock %}
 </html>

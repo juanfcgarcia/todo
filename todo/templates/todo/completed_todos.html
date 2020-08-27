@@ -10,8 +10,9 @@
     <title>Completed</title>
 </head>
 <body>
-        <h2>Monday, 11:12am, Juan Felipe</h2>
-        <h3>All your tasks</h3>
+<div class="body-content">
+        <h2>{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
+        <h3>Your tasks</h3>
 <div class="todo_container">
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
@@ -34,7 +35,7 @@
              {% csrf_token %}
             <button onclick="location.href='{% url 'create_todo' %}'" type="button" class="btn_new_todo"></button>
         </form>
-
+</div>
 </body>
      {% endblock %}
 </html>

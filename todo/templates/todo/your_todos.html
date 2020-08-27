@@ -7,17 +7,19 @@
     <meta charset="UTF-8">
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>your todos</title>
+    <title>Your todos</title>
 </head>
 <body>
-        <h2>Monday, 11:12am, Juan Felipe</h2>
-        <h3>All your tasks</h3>
+<div class="body-content">
+        <h2 class="time-info">{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
+        <h3 class="title">Your tasks</h3>
 <div class="todo_container">
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
         <button onclick="location.href='{% url 'completed' %}'">Completed</button>
         <button onclick="location.href='{% url 'all_todos' %}'">All</button>
     </div>
+         {% if todos %}
             <ul>
                 {% for todo in todos %}
                 <li>
@@ -25,16 +27,22 @@
                     {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
                     {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %}
                     <button class="btn_edit" onclick="location.href='{% url 'edit_todo' todo.id %}'" ></button>
-
+                     <form method="POST" action="{% url 'complete_todo' todo.id %}">
+                      {% csrf_token %}
+                          <button type="submit" class="btn-complete"></button>
+                </form>
                 </li>
                 {% endfor %}
             </ul>
+     {% else %}
+        <h1>you have no pending tasks</h1>
+     {% endif %}
 </div>
         <form method="GET">
              {% csrf_token %}
             <button onclick="location.href='{% url 'create_todo' %}'" type="button" class="btn_new_todo"></button>
         </form>
-
+</div>
 </body>
      {% endblock %}
 </html>
