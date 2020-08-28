@@ -351,7 +351,7 @@ section .container .user .formBx form a{
 
 .body-content{
   background-color: #2573D5;
-  background-image: url("../images/7.jpg");
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -461,4 +461,11 @@ section .container .user .formBx form a{
 
 h2{
 padding-right:10px;
+}
+
+.empty-todos{
+  color: #ff7a4c;
+  margin-top: 30%;
+  font-size: 1.5em;
+
 }

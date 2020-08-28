@@ -10,9 +10,14 @@
     <title>Your todos</title>
 </head>
 <body>
-<div class="body-content">
+<div class="body-content" style="background-image: url('{{ url_image }}');">
         <h2 class="time-info">{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
         <h3 class="title">Your tasks</h3>
+       <ul>
+  {% for todoss in todosa %}
+  <li>{{ todoss.id }} - {{ todoss.title }}</li>
+  {% endfor %}
+</ul>
 <div class="todo_container">
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
@@ -35,7 +40,7 @@
                 {% endfor %}
             </ul>
      {% else %}
-        <h1>you have no pending tasks</h1>
+        <h1 class="empty-todos">you have no pending tasks</h1>
      {% endif %}
 </div>
         <form method="GET">

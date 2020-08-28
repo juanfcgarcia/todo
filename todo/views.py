@@ -9,13 +9,15 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.utils import timezone
-from datetime import timedelta
+import requests
+from .config import key_api
 
 
 # Create your views here.
 def home(request):
     if request.method == 'GET':
-        return render(request, 'todo/home.html', {'form': AuthenticationForm()})
+        url_image = request_api()
+        return render(request, 'todo/home.html', {'form': AuthenticationForm(), 'url_image': url_image})
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
@@ -28,7 +30,8 @@ def home(request):
 
 def signup_user(request):
     if request.method == 'GET':
-        return render(request, 'todo/signup_user.html', {'form': UserCreationForm()})
+        url_image = request_api()
+        return render(request, 'todo/signup_user.html', {'form': UserCreationForm(), 'url_image': url_image})
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
@@ -55,7 +58,8 @@ def logout_user(request):
 @login_required
 def your_todos(request):
     todos = Todo.objects.filter(user=request.user, completed_date__isnull=True)
-    return render(request, 'todo/your_todos.html', {'todos': todos})
+    url_image = request_api()
+    return render(request, 'todo/your_todos.html', {'todos': todos, 'url_image': url_image})
 
 
 @login_required
@@ -108,11 +112,23 @@ def delete_todo(request, todo_pk):
 
 @login_required
 def completed(request):
+    url_image = request_api()
     todos = Todo.objects.filter(user=request.user, completed_date__isnull=False).order_by('-completed_date')
-    return render(request, 'todo/completed_todos.html', {'todos': todos})
+    return render(request, 'todo/completed_todos.html', {'todos': todos, 'url_image': url_image})
 
 
 @login_required
 def all_todos(request):
+    url_image = request_api()
     todos = Todo.objects.filter(user=request.user)
-    return render(request, 'todo/all_todos.html', {'todos': todos})
+    return render(request, 'todo/all_todos.html', {'todos': todos, 'url_image': url_image})
+
+
+def request_api():
+    response = requests.get('https://api.thecatapi.com/v1/images/search',
+                            headers={"x-api-key": "key_api"},
+                            params={"limit": 1, "size": "full"})
+
+    responses = response.json()
+    image_api_url = responses[0]['url']
+    return image_api_url
