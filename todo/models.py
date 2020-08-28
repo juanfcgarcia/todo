@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 class Todo(models.Model):
+    objects = None
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=110)
     description = models.TextField(blank=True)

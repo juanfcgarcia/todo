@@ -1,15 +1,14 @@
 {% if user.is_authenticated %}
 <div class="header-user">
     <h2>Hi ! {{ user.username }}  </h2>
-<form action="{% url 'logout_user' %}" method="POST" class="header-user">
-         {% csrf_token %}
-    <button type="submit" class="btn-out"></button>
-</form>
-
-
+    <form action="{% url 'logout_user' %}" method="POST" class="header-user">
+             {% csrf_token %}
+        <button type="submit" class="btn-out"></button>
+    </form>
+    
 {% else %}
 
-<a href="{% url 'signup_user' %}">Sing Up</a>
+<a href="{% url 'signup_user' %}">Sign Up</a>
 
 {% endif %}
 </div>

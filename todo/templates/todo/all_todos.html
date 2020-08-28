@@ -15,23 +15,22 @@
 <div class="body-content" style="background-image: url('{{ url_image }}');">
         <h2 class="time-info">{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
         <h3 class="title">Your tasks</h3>
-<div class="todo_container">
-            <div class="header-todo">
-        <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
-        <button onclick="location.href='{% url 'completed' %}'">Completed</button>
-        <button>All</button>
-    </div>
-            <ul>
-                {% for todo in todos %}
-                <li>
-
-                    {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
-                    {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %}
-                    <button class="btn_edit" onclick="location.href='{% url 'edit_todo' todo.id %}'" ></button>
-                </li>
-                {% endfor %}
-            </ul>
-</div>
+        <div class="todo_container">
+                    <div class="header-todo">
+                <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
+                <button onclick="location.href='{% url 'completed' %}'">Completed</button>
+                <button>All</button>
+            </div>
+                    <ul>
+                        {% for todo in todos %}
+                        <li>
+                            {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
+                            {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %}
+                            <button class="btn_edit" onclick="location.href='{% url 'edit_todo' todo.id %}'" ></button>
+                        </li>
+                        {% endfor %}
+                    </ul>
+        </div>
         <form method="GET">
              {% csrf_token %}
             <button onclick="location.href='{% url 'create_todo' %}'" type="button" class="btn_new_todo"></button>

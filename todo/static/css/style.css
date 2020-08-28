@@ -1,5 +1,4 @@
- *
-{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,9 +6,8 @@
 }
 
 body{
-overflow-y: hidden;
+    overflow-y: hidden;
 }
-
 
 section{
     position: relative;
@@ -22,6 +20,7 @@ section{
 }
 
 section .container{
+
     position: relative;
     width: 900px;
     height: 600px;
@@ -40,7 +39,6 @@ section .container .user{
     width: 100%;
     height: 100%;
     display: flex;
-
 }
 
 section .container .user .imgBx{
@@ -49,7 +47,6 @@ section .container .user .imgBx{
     height: 100%;
     background-color:  #ff7a4c;
     transition: 0.5s;
-
 }
 
 section .container .user .imgBx img{
@@ -59,7 +56,6 @@ section .container .user .imgBx img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 
 section .container .user .formBx{
@@ -72,8 +68,6 @@ section .container .user .formBx{
     align-items: center;
     padding: 40px;
     transition: 0.5s;
-
-
 }
 
 section .container .user .formBx h2{
@@ -107,7 +101,6 @@ section .container .user .formBx .ilust{
 }
 
 section .container .user .formBx form input{
-
     position: relative;
     width: 100%;
     padding: 8px;
@@ -135,13 +128,11 @@ section .container .user .formBx form button{
     border: 2px;
     border-radius: 6px;
     border-width: 1px;
-
 }
 
 section .container .user .formBx form p{
     color: rgb(160, 159, 159);
     text-align: center;
-
 }
 
 section .container .user .formBx form a{
@@ -184,7 +175,6 @@ section .container .user .formBx form a{
     background-color:  rgba(0, 0, 0, 0);
 }
 
-
 .todo_container ul li{
     color: aliceblue;
     justify-content: center;
@@ -209,7 +199,6 @@ section .container .user .formBx form a{
     border-bottom: 3px solid #2573D5;
 }
 
-
  .btn_new_todo{
     height: 55px;
     width: 55px;
@@ -221,7 +210,6 @@ section .container .user .formBx form a{
     border-radius: 70px;
     display:block;
     margin:auto;
-
   }
 
 .btn_edit{
@@ -265,13 +253,10 @@ section .container .user .formBx form a{
     text-align: center;
     display:block;
     margin:auto;
-
 }
 
 .form_create h2{
-
     color: white;
-
 }
 
 .form_create .input{
@@ -284,11 +269,9 @@ section .container .user .formBx form a{
 }
 
 .form_create .input label{
-
     display: block;
     color:  rgb(160, 159, 159);
     margin-bottom: 5px;
-
 }
 
 .form_create .input .inputBox input{
@@ -305,7 +288,6 @@ section .container .user .formBx form a{
     color: white;
     height: 42px;
     font-size: 14px;
-
 }
 
 .form_create .ilust{
@@ -351,7 +333,6 @@ section .container .user .formBx form a{
 
 .body-content{
   background-color: #2573D5;
-
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -419,7 +400,6 @@ section .container .user .formBx form a{
   border-width: 1px;
   border-style: solid;
   border-color: #ff7a4c;
-
 }
 
 .header-user{
@@ -431,7 +411,6 @@ section .container .user .formBx form a{
 }
 
 .btn-confirm{
-
     color: white;
     background-color: #2573D5;
     margin-top: 2%;
@@ -456,7 +435,6 @@ section .container .user .formBx form a{
   margin-left: 98%;
   margin-right: 30px;
   margin-top: 10px;
-
 }
 
 h2{
@@ -467,5 +445,4 @@ padding-right:10px;
   color: #ff7a4c;
   margin-top: 30%;
   font-size: 1.5em;
-
 }

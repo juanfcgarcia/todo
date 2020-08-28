@@ -10,14 +10,13 @@
     <title>Your todos</title>
 </head>
 <body>
+
 <div class="body-content" style="background-image: url('{{ url_image }}');">
         <h2 class="time-info">{% now "H:i" %}, {% now "jS F" %}, {{ user.username }}</h2>
         <h3 class="title">Your tasks</h3>
        <ul>
-  {% for todoss in todosa %}
-  <li>{{ todoss.id }} - {{ todoss.title }}</li>
-  {% endfor %}
 </ul>
+
 <div class="todo_container">
             <div class="header-todo">
         <button onclick="location.href='{% url 'your_todos' %}'">Pending tasks</button>
@@ -28,7 +27,6 @@
             <ul>
                 {% for todo in todos %}
                 <li>
-
                     {% if todo.important %}<b>{% endif %}{{ todo.title }}{% if todo.important %}</b>
                     {% endif %}{% if todo.description %} <br> {{todo.description}} {% endif %}
                     <button class="btn_edit" onclick="location.href='{% url 'edit_todo' todo.id %}'" ></button>

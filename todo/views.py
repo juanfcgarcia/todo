@@ -69,9 +69,9 @@ def create_todo(request):
     else:
         try:
             form = Todo_form(request.POST)
-            newtodo = form.save(commit=False)
-            newtodo.user = request.user
-            newtodo.save()
+            new_todo = form.save(commit=False)
+            new_todo.user = request.user
+            new_todo.save()
             return redirect('your_todos')
         except ValueError:
             return render(request, 'todo/create_todo.html',
